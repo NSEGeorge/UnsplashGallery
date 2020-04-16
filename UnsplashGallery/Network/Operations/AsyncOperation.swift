@@ -74,5 +74,9 @@ class AsyncOperation: Operation {
         }
     }
     
-    func completed() { }
+    func completed() {
+      if isExecuting {
+          self.state = .finished
+      }
+  }
 }
